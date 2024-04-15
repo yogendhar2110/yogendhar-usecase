@@ -1,0 +1,58 @@
+<mvc:View controllerName="customerfeedback.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+            <form:SimpleForm
+                id="form"
+                width="98%"
+               editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+                singleContainerFullSize="false"
+            >
+           <form:toolbar>
+				<Toolbar id="TB1">
+					<Title text ="Customer Feedback Form"></Title>
+                    <ToolbarSpacer></ToolbarSpacer>
+                     <Button text="Submit" press="onSubmit"></Button>
+				</Toolbar>
+		</form:toolbar>
+        <form:content>
+            <Label text="Customer Name"></Label>
+            <Input id="customerNameInput" maxLength="50" type="Text"></Input>
+            <Label text="Email"></Label>
+            <Input id="emailInput" type="Email"></Input>
+            <Label text="FeedBack Type"></Label>
+            <Select id="feedbackTypeSelect" forceSelection="false">
+                <core:Item key="Complaint" text="Complaint"/>
+				<core:Item key="Appreciation" text="Appreciation"/>
+				<core:Item key="Suggestion" text="Suggestion"/>
+            </Select>
+            <Label text="Comments"></Label>
+            <TextArea id="commentsTextArea" growing="true" maxLength="1000" placeholder="Write your comments here.." />
+            
+        </form:content>
+
+            </form:SimpleForm>
+           
+        </content>
+
+    </Page>
+</mvc:View>
